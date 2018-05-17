@@ -1,0 +1,15 @@
+<%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %>
+
+<h4><strong>Cocktail name:</strong> <%= @cocktail.name %></h4>
+
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description.capitalize %></p>
+  <p><%= dose.ingredient.name.capitalize %></p>
+
+<% end %>
+
+<%= link_to "Edit Cocktail", edit_cocktail_path %>
+
+<%= link_to "Cocktail List", cocktails_path %>
+
+

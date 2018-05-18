@@ -5,6 +5,10 @@
   <%= f.submit %>
 <% end %>
 
+<div class="bottom_links">
+  <%= link_to "Back to Cocktail", cocktail_path(@cocktail) %>
+</div>
+<div>
+  <%= link_to "Back to Cocktail List", cocktails_path %>
 
-<%= link_to "Back to Cocktail", cocktail_path(@cocktail) %>
-<%= link_to "Back to Cocktail List", cocktails_path %>
+</div>

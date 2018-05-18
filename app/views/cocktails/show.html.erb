@@ -1,15 +1,30 @@
+<h4 style="padding-bottom: 15px"><strong>Featured Cocktail:</strong></h4>
+<h3><%= @cocktail.name %></h3>
+
+<div class="table">
+  <table style="width:50%">
+    <tr>
+      <th>Ingredient</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+  <% @cocktail.doses.each do |dose| %>
+    <tr>
+      <td><p><%= dose.ingredient.name.capitalize %></p></td>
+      <td><p><%= dose.description.capitalize %></p></td>
+      <td><p><%= link_to "Delete Ingredient", cocktail_dose_path(@cocktail, dose),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %></td></p></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<div class="bottom_links">
 <%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %>
+</div>
 
-<h4><strong>Cocktail name:</strong> <%= @cocktail.name %></h4>
-
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description.capitalize %></p>
-  <p><%= dose.ingredient.name.capitalize %></p>
-
-<% end %>
-
-<%= link_to "Edit Cocktail", edit_cocktail_path %>
-
-<%= link_to "Cocktail List", cocktails_path %>
+<div>
+  <%= link_to "Back to Cocktail List", cocktails_path %>
+</div>
 
 
